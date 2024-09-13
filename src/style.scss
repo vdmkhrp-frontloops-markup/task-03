@@ -2,7 +2,128 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  place-items: center;
+  background-color: #4a9e86;
+  padding: clamp(30px, 6vw, 100px) clamp(15px, 4vw, 30px);
+}
+
+.product {
+  max-width: 600px;
+  width: 100%;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+  background-color: #fff;
+  padding: clamp(20px, 5vw, 40px) clamp(15px, 5vw, 55px);
+  background-image: url("./img/bicycle.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 200px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 rgba(#000, 0.4);
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__title {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46;
+    aspect-ratio: 1;
+    box-shadow: 0 0 0 1px #e1e1e1 inset;
+    border-radius: 50%;
+    padding: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 0 0 5px #f2f2f2;
+      transition: opacity 300ms ease-in;
+      opacity: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      width: 24px;
+      aspect-ratio: 1;
+    }
+  }
+
+  &__description {
+    color: #a6a6a7;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-top: 25px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__name {
+    color: #525252;
+    font-size: clamp(15px, 4vw, 18px);
+    font-weight: 400;
+    white-space: nowrap;
+
+    &--strong {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: clamp(17px, 4vw, 22px);
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: clamp(18px, 4vw, 20px);
+  }
 }
