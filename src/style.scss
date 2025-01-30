@@ -18,7 +18,7 @@ body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
   display: grid;
-  place-items: center;
+  place-content: center;
   background-color: #4a9e86;
   padding: clamp(30px, 6vw, 100px) clamp(15px, 4vw, 30px);
 }
